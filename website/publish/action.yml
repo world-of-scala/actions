@@ -16,6 +16,9 @@ inputs:
   command:
     description: Website command to run
     default: website
+  site-path:
+    description: Path to the site
+    default: target/site
 
 runs:
   using: "composite"
@@ -34,7 +37,7 @@ runs:
    - name: Upload artifact
      uses: actions/upload-pages-artifact@v4
      with:
-        path: "target/site"
+        path: ${{ inputs.site-path }}
    - name: Deploy to GitHub Pages
      
      id: deployment
