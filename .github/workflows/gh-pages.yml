@@ -37,6 +37,11 @@ on:
         description: Test command to run
         type: string
         default: ./scripts/gh-pages.sh'
+
+      site-path:
+        type: string
+        description: Path to the site
+        default: target/site
       publish:
         description: Whether to deploy the website
         type: boolean
@@ -91,7 +96,7 @@ jobs:
          if: ${{ inputs.publish }}
          uses: actions/upload-pages-artifact@v4
          with:
-            path: "target/site"
+            path: ${{ inputs.site-path }}
        - name: Deploy to GitHub Pages
          if: ${{ inputs.publish }}
          id: deployment
