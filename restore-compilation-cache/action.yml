@@ -14,7 +14,7 @@ runs:
   steps:
     - name: Restore main compilation cache (${{ inputs.key }})
       id: impl_main
-      uses: actions/cache/restore@v4
+      uses: actions/cache/restore@v5
       with:
         path: |
           target/
@@ -27,7 +27,7 @@ runs:
           ${{ inputs.key }}
     - name: Restore tests compilation cache (${{ inputs.key }})
       id: impl_tests
-      uses: actions/cache/restore@v4
+      uses: actions/cache/restore@v5
       with:
         path: |
           target/scala*/*test*

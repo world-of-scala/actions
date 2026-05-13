@@ -65,7 +65,7 @@ runs:
        fi
 
     - name: Upload tests compilation cache
-      uses: actions/cache/save@v4
+      uses: actions/cache/save@v5
       with:
         path: |
           target/scala*/*test*
@@ -73,7 +73,7 @@ runs:
         key: ${{ inputs.cache-key }}-${{ inputs.scala-version }}-tests-${{ hashFiles('build.sbt') }}-${{ hashFiles('modules/**/src/test/scala/**') }}
 
     - name: Upload main compilation cache
-      uses: actions/cache/save@v4
+      uses: actions/cache/save@v5
       with:
         path: |
           target/
