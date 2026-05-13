@@ -21,7 +21,7 @@ runs:
   using: "composite"
   steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
     - name: Setup Graphviz
       uses: ts-graphviz/setup-graphviz@v2      
     - name: Set up SBT

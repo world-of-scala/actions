@@ -33,7 +33,7 @@ runs:
   steps:
     - name: Checkout code
       if: ${{ inputs.checkout == 'true' }}
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
       with:
         submodules: ${{ inputs.checkout-submodules }}
     - name: Set up Scala
