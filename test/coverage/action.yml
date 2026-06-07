@@ -54,7 +54,7 @@ runs:
            
        - name: "Upload coverage to Codecov"
          if: ${{ inputs.codecov-token != '' }}
-         uses: "codecov/codecov-action@v5"
+         uses: "codecov/codecov-action@v7"
          with:
            token: ${{ inputs.codecov-token }}
            fail_ci_if_error: true
